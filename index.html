@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trello-ähnliche Todo-Liste</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <h1>Boards</h1>
+      <button id="add-list-btn" class="btn primary">+ Liste hinzufügen</button>
+    </header>
+
+    <main>
+      <section id="board" class="board" aria-label="Kanban Board"></section>
+    </main>
+
+    <template id="list-template">
+      <article class="list" draggable="true">
+        <header class="list-header">
+          <input class="list-title" type="text" aria-label="Listentitel" />
+          <button class="icon-btn delete-list" title="Liste löschen">✕</button>
+        </header>
+
+        <div class="cards" aria-label="Kartenbereich"></div>
+
+        <form class="add-card-form">
+          <input class="new-card-input" type="text" placeholder="Neue Karte..." required />
+          <button class="btn">Hinzufügen</button>
+        </form>
+      </article>
+    </template>
+
+    <template id="card-template">
+      <div class="card" draggable="true">
+        <textarea class="card-text" rows="2" aria-label="Kartentext"></textarea>
+        <button class="icon-btn delete-card" title="Karte löschen">✕</button>
+      </div>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>
