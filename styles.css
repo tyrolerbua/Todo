@@ -1,0 +1,131 @@
+:root {
+  --bg: #0079bf;
+  --list-bg: #ebecf0;
+  --card-bg: #ffffff;
+  --text: #172b4d;
+  --shadow: 0 2px 8px rgba(9, 30, 66, 0.25);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  color: var(--text);
+  background: linear-gradient(135deg, #0f6aa8, #1380cc);
+  min-height: 100vh;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.2);
+  color: #fff;
+}
+
+.board {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  overflow-x: auto;
+  align-items: flex-start;
+  min-height: calc(100vh - 64px);
+}
+
+.list {
+  width: 300px;
+  background: var(--list-bg);
+  border-radius: 10px;
+  padding: 0.75rem;
+  box-shadow: var(--shadow);
+}
+
+.list.dragging,
+.card.dragging {
+  opacity: 0.45;
+}
+
+.list-header {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+}
+
+.list-title {
+  width: 100%;
+  border: none;
+  background: transparent;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0.35rem;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-height: 20px;
+  padding-bottom: 0.5rem;
+}
+
+.card {
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-start;
+  background: var(--card-bg);
+  border-radius: 8px;
+  padding: 0.5rem;
+  box-shadow: 0 1px 3px rgba(9, 30, 66, 0.2);
+}
+
+.card-text {
+  width: 100%;
+  border: none;
+  resize: vertical;
+  min-height: 32px;
+  font: inherit;
+}
+
+.btn,
+.icon-btn {
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn {
+  background: #dfe1e6;
+  padding: 0.45rem 0.65rem;
+}
+
+.btn.primary {
+  background: #61bd4f;
+  color: #fff;
+  font-weight: 600;
+}
+
+.icon-btn {
+  background: transparent;
+  padding: 0.25rem 0.45rem;
+}
+
+.add-card-form {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.new-card-input {
+  flex: 1;
+  border: none;
+  border-radius: 6px;
+  padding: 0.45rem;
+}
+
+.drop-target {
+  outline: 2px dashed #5e6c84;
+  outline-offset: 2px;
+}
